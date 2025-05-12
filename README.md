@@ -1,24 +1,16 @@
-# README
+Flight Booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Ruby on Rails application simulates the first three steps of a one-way flight booking process. It is based on [The Odin Project’s Flight Booker assignment](https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker#introduction)
+ assignment and focuses on working with forms, user input, and nested submissions.
 
-Things you may want to cover:
+Features:
 
-* Ruby version
+    Search for one-way flights by selecting:
 
-* System dependencies
+        Departure and arrival airports
 
-* Configuration
+        Departure date
 
-* Database creation
+    Choose from a list of available flights
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    Enter passenger information for each traveler
