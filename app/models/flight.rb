@@ -4,4 +4,5 @@ class Flight < ApplicationRecord
 
   validates :start_timestamp, presence: true
   validates :flight_length, presence: true
+  validates :arrival_airport_id, comparison: { other_than: :departure_airport_id }
 end
