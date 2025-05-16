@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_timestamp: 2025-05-16 14:34:35
+  flight_duration: 1
+
+two:
+  start_timestamp: 2025-05-16 14:34:35
+  flight_duration: 1
