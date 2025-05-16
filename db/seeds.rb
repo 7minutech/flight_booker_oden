@@ -7,10 +7,3 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Airport.destroy_all
-
-10.times do |index|
-  Airport.create!(code: Faker::Travel::Airport.iata(size: 'large', region: 'united_states'))
-end
-
-p "Created #{Airport.count} movies"
