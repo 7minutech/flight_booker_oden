@@ -4,7 +4,7 @@ namespace :airports do
   task seed_airports: :environment do
     Airport.destroy_all
 
-    20.times do
+    5.times do
       Airport.create!(code: Faker::Travel::Airport.unique.iata(size: "large", region: "united_states"))
     end
   end
