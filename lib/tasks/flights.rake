@@ -9,7 +9,7 @@ namespace :flights do
       10.times do
         Airport.all.each do |arrival_airport|
           next if airport.id == arrival_airport.id
-          flight_time = Faker::Time.between(from: Time.now, to: 7.days.from_now)
+          flight_time = rounded_time(Faker::Time.between(from: Time.now, to: 7.days.from_now))
           flight_duration = Faker::Number.between(from: 30, to: 1200)
           departing_flight = airport.departing_flights.build(
             departure_airport: airport,
@@ -22,4 +22,16 @@ namespace :flights do
       end
     end
   end
+end
+
+def rounded_time(time)
+  minute = time.min
+  hour = time.hour
+  nearest_minute = (minute/15).round * 15
+  if nearest_minute == 60
+    nearest_minute = 0
+    hour += 1
+  end
+  hour = hour % 24
+  time.change(hour: hour, min: nearest_minute)
 end
