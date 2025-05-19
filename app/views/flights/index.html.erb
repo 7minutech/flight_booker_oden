@@ -13,6 +13,21 @@
   <br><br>
   <%= form.submit "Search" %>
 <% end %>
+<br><br>
+<% if @available_flights %>
+  <h3>
+    <%= "Results for #{Airport.find(params[:departure_airport_id]).code} 
+          to #{Airport.find(params[:arrival_airport_id]).code} on #{Flight.formatted_date_str(params[:flight_date])}"
+    %>
+  </h3>
+  <%= form_with method: :get do |form| %>
+    <%= form.collection_radio_buttons :id, @available_flights, :id, :formatted_time do |b| %>
+      <%= b.label { b.radio_button + " " + b.text } %><br>
+    <% end %>
+    <br>
+    <%= form.submit "Submit" %>
+  <% end %>
+<% end  %>
 <% @available_flights.each do |flight| %>
   <p>From: <%= flight.departure_airport.code %></p>
   <p>To: <%= flight.arrival_airport.code %></p>
