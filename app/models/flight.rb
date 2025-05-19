@@ -20,4 +20,9 @@ class Flight < ApplicationRecord
     end
     flight_dates
   end
+
+  def self.on(dept_id, arrive_id, date)
+    Flight.where("departure_airport_id = ? and arrival_airport_id = ?
+                  and DATE(start_timestamp) = ?", dept_id, arrive_id, Date.parse(date))
+  end
 end
