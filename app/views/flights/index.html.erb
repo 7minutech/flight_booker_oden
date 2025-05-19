@@ -28,8 +28,3 @@
     <%= form.submit "Submit" %>
   <% end %>
 <% end  %>
-<% @available_flights.each do |flight| %>
-  <p>From: <%= flight.departure_airport.code %></p>
-  <p>To: <%= flight.arrival_airport.code %></p>
-  <p>At: <%= flight.start_timestamp %></p>
-<% end %>
