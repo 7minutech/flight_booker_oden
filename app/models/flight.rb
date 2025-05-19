@@ -15,6 +15,14 @@ class Flight < ApplicationRecord
     start_timestamp.strftime("%I:%M %p")
   end
 
+  def self.formatted_date_str(date)
+    year = date[0..3]
+    month = date[5..6]
+    day = date[8..9]
+    new_date = "#{month}/#{day}/#{year}"
+    new_date
+  end
+
   def self.unique_ordered_dates
     flight_dates = {}
     ordered_timestamps.each do |flight|
