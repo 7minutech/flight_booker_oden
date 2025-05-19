@@ -1,15 +1,15 @@
 <%= form_with method: :get do |form| %>
   <%= form.label :departure_airport_id, "Departure Airport:" %>
-  <%= form.select(:departure_airport_id, @departure_airports) %>
+  <%= form.select(:departure_airport_id, @departure_airports, selected: params[:departure_airport_id]) %>
   <br><br>
   <%= form.label :arrival_airport_id, "Arrival Airport:" %>
-  <%= form.select(:arrival_airport_id, @arrival_airports) %>
+  <%= form.select(:arrival_airport_id, @arrival_airports, selected: params[:arrival_airport_id]) %>
   <br><br>
   <%= form.label :ticket_num, "Passenger Number:" %>
-  <%= form.select(:ticket_num, @passenger_numbers) %>
+  <%= form.select(:ticket_num, @passenger_numbers, selected: params[:ticket_num])%>
   <br><br>
   <%= form.label :flight_date, "Flight Date:" %>
-  <%= form.select(:flight_date, @flight_dates) %>
+  <%= form.select(:flight_date, @flight_dates, selected: params[:flight_date]) %>
   <br><br>
   <%= form.submit "Search" %>
 <% end %>
