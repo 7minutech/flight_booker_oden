@@ -2,5 +2,14 @@
 <h2>Time: <%= @flight.formatted_time %></h2>
 <h2>Flight Number: #<%= @flight.id %></h2>
 <h2><%= @flight.departure_airport.code %> &rarr; <%= @flight.arrival_airport.code %></h2>
-
+<%= form_with model: @booking do |f| %>
+    <%= f.fields_for :passengers do |passenger_builder| %>
+      <%= passenger_builder.label :name %>
+      <%= passenger_builder.text_field :name %><br>
+      <%= passenger_builder.label :email %>
+      <%= passenger_builder.email_field :email %><br>
+      <br>
+    <% end %>
+    <%= f.submit %>
+<% end %>
 
